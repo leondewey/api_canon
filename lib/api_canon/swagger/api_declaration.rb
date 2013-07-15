@@ -20,7 +20,7 @@ module ApiCanon
           }
 
           object.params.keys.each do |name|
-            url_params[name] = '{name}' unless name == :format
+            url_params[name] = "{#{name}}" unless name == :format
           end
 
           url = URI.unescape url_for(url_params)
